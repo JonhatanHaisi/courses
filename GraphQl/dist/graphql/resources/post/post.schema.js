@@ -17,16 +17,13 @@ const postTypes = `
         title: String!
         content: String!
         photo: String!
-        author: Int
     }
 
 `;
 exports.postTypes = postTypes;
 const postQueries = `
-
     posts(first: Int, offset: Int): [ Post! ]!
     post(id: ID!): Post
-
 `;
 exports.postQueries = postQueries;
 const postMutations = `
