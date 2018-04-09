@@ -20,7 +20,7 @@ export interface CommentModel extends BaseModelInterface, sequelize.Model<Commen
 
 export default (sequelize: sequelize.Sequelize, dataTypes: sequelize.DataTypes): CommentModel => {
 
-    const Comment: CommentModel = sequelize.define('comment', {
+    const Comment: CommentModel = sequelize.define('Comment', {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,

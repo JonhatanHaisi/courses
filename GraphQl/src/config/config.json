@@ -7,11 +7,12 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "developer",
+    "password": "password", 
+    "database": "graphql_test",
+    "host": "192.168.56.1",
+    "dialect": "mysql",
+    "logging": false
   },
   "production": {
     "username": "root",
