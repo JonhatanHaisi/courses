@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { Platform, MenuController } from 'ionic-angular';
+import { Platform } from 'ionic-angular'; // MenuController
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { AlertPage } from '../pages/alert/alert';
+import { ButtonsPage } from '../pages/buttons/buttons';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,11 +15,13 @@ export class MyApp {
   pages: Array<{ title: string, icon: string, component: any }>;
   rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl: MenuController) {
+  // , private menuCtrl: MenuController
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     
     this.pages = [
       { title:"Home", icon:"home", component: HomePage },
       { title:"Alert", icon:"arrow-forward", component: AlertPage },
+      { title:"Buttons", icon:"arrow-forward", component: ButtonsPage },
     ];  
       
     platform.ready().then(() => {        
