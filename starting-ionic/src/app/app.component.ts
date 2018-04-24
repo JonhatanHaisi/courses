@@ -4,6 +4,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { AlertPage } from '../pages/alert/alert';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -15,7 +17,8 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl: MenuController) {
     
     this.pages = [
-      { title:"Home", icon:"home", component: HomePage }
+      { title:"Home", icon:"home", component: HomePage },
+      { title:"Alert", icon:"arrow-forward", component: AlertPage },
     ];  
       
     platform.ready().then(() => {        
