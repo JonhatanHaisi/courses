@@ -14,4 +14,18 @@
   </ion-content>
 </ion-menu>
 
+<ion-menu [content]="content" side="right">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Sec Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+        <p ion-item>Item 1</p>
+        <p ion-item>Item 2</p>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
 <ion-nav #content [root]="rootPage"></ion-nav>
