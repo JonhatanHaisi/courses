@@ -8,15 +8,29 @@ import { HomePage } from '../pages/home/home';
   templateUrl: 'app.html'
 })
 export class MyApp {
+    
+  pages: Array<{ title: string, icon: string, component: any }>;
   rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    platform.ready().then(() => {
+    
+    this.pages = [
+      { title:"Home", icon:"home", component: HomePage }
+    ];  
+      
+    platform.ready().then(() => {        
+        
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
   }
+  
+  openPage(p: { title: string, icon: string, component: any }): void {
+      this.rootPage = p.component;
+  }
+  
+  
 }
 
