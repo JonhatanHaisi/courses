@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 
 import { AlertPageModule } from '../pages/alert/alert.module';
 import { ButtonsPageModule } from '../pages/buttons/buttons.module';
+import { CardsPageModule } from '../pages/cards/cards.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ButtonsPageModule } from '../pages/buttons/buttons.module';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AlertPageModule,
-    ButtonsPageModule
+    ButtonsPageModule,
+    CardsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
