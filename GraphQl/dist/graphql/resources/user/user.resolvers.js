@@ -22,7 +22,7 @@ exports.userResolvers = {
                 .findAll({
                 limit: first,
                 offset: offset,
-                attributes: context.requestedFields.getFields(info, { keep: ['id'], exclude: ['comments'] })
+                attributes: context.requestedFields.getFields(info, { keep: ['id'], exclude: ['comments', 'posts'] })
             })
                 .catch(utils_1.handleError);
         },
@@ -30,7 +30,7 @@ exports.userResolvers = {
             id = parseInt(id);
             return context.db.User
                 .findById(id, {
-                attributes: context.requestedFields.getFields(info, { keep: ['id'], exclude: ['comments'] })
+                attributes: context.requestedFields.getFields(info, { keep: ['id'], exclude: ['comments', 'posts'] })
             })
                 .then((user) => {
                 utils_1.throwError(!user, `User with id ${id} not found.`);
