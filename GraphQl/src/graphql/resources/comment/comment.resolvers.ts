@@ -41,7 +41,7 @@ export const commentResolvers = {
 
     Mutation: {
 
-        createComment: compose(...authResolvers)( (parent, {input, authUser}, {db}: {db: DbConnection, authUser: AuthUser}, info: GraphQLResolveInfo) => {
+        createComment: compose(...authResolvers)( (parent, {input}, {db, authUser}: {db: DbConnection, authUser: AuthUser}, info: GraphQLResolveInfo) => {
             input.user = authUser.id;
             return db.sequelize.transaction((t: Transaction) => {
                 return db.Comment.create(input, { transaction: t });

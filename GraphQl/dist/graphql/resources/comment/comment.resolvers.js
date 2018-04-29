@@ -27,7 +27,7 @@ exports.commentResolvers = {
         }
     },
     Mutation: {
-        createComment: composable_resolver_1.compose(...auth_resolver_1.authResolvers)((parent, { input, authUser }, { db }, info) => {
+        createComment: composable_resolver_1.compose(...auth_resolver_1.authResolvers)((parent, { input }, { db, authUser }, info) => {
             input.user = authUser.id;
             return db.sequelize.transaction((t) => {
                 return db.Comment.create(input, { transaction: t });
