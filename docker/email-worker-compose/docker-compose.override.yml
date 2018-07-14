@@ -1,0 +1,4 @@
+version: '3'
+services:
+  environment: 
+    - DN_NAME=email_sender
